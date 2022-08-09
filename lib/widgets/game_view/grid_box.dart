@@ -23,7 +23,6 @@ class GridBox extends StatelessWidget {
                 ? const SizedBox()
                 : SimpleShadow(
                     color: value.contains('x') ? lightBlue : Colors.red,
-                    offset: const Offset(3, 3),
                     child: SvgPicture.asset(
                       value,
                       width: 60.w,
