@@ -19,7 +19,7 @@ class GridList extends StatelessWidget {
       AppAsset.oWithUnShadow,
     ];
     return SizedBox(
-      height: 600,
+      height: 420,
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3, childAspectRatio: 1 / 1),

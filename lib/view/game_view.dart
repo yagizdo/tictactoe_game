@@ -29,7 +29,14 @@ class GameView extends StatelessWidget {
                     ),
                     const GameTimer(),
                     SizedBox(
-                      height: 50.h,
+                      height: 30.h,
+                    ),
+                    Text(
+                      'Player X Turn',
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                    SizedBox(
+                      height: 40.h,
                     ),
                     const GridList(),
                   ],
