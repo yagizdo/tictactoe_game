@@ -10,7 +10,7 @@ class ButtonContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/gameView');
+        Navigator.pushReplacementNamed(context, '/gameView');
       },
       child: Container(
         width: 120.w,
