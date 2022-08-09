@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_app/routes.dart';
 import 'package:tictactoe_app/widgets/game_view/game_button.dart';
 import 'package:tictactoe_app/widgets/game_view/game_timer.dart';
 import 'package:tictactoe_app/widgets/game_view/grid_list.dart';
@@ -59,7 +60,9 @@ class GameView extends StatelessWidget {
 
                     // Return main menu Button
                     GameButton(
-                      function: () {},
+                      function: () {
+                        Navigator.pushReplacementNamed(context, Routes.startViewRoute);
+                      },
                       width: 250.w,
                       height: 40.h,
                       borderRadius: 10,
