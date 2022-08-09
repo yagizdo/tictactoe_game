@@ -8,11 +8,6 @@ class StartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Start Game',
-        child: const Icon(Icons.play_arrow),
-      ),
       body: GradientBackground(
         gradient: LinearGradient(
           begin: Alignment.topLeft,

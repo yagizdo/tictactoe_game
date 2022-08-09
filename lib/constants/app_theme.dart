@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   final darkTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.black,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: Colors.black, foregroundColor: Colors.white),
