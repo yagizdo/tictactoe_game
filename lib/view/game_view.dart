@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tictactoe_app/widgets/game_view/game_timer.dart';
+import 'package:tictactoe_app/widgets/game_view/grid_list.dart';
 
 import '../widgets/gradient_background.dart';
 
@@ -21,8 +23,15 @@ class GameView extends StatelessWidget {
             child: Align(
               child: SafeArea(
                 child: Column(
-                  children: const [
-                    GameTimer(),
+                  children: [
+                    SizedBox(
+                      height: 50.h,
+                    ),
+                    const GameTimer(),
+                    SizedBox(
+                      height: 50.h,
+                    ),
+                    const GridList(),
                   ],
                 ),
               ),

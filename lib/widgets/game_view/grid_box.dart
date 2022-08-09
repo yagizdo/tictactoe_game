@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tictactoe_app/constants/app_assets.dart';
 import 'package:tictactoe_app/constants/app_theme.dart';
 
 class GridBox extends StatelessWidget {
-  const GridBox({Key? key}) : super(key: key);
-
+  GridBox({Key? key, required this.value}) : super(key: key);
+  String value;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
+    return Padding(
+      padding: EdgeInsets.all(10.w),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: white,
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
+          ),
         ),
+        child: Center(
+            child: value.isEmpty
+                ? const SizedBox()
+                : SvgPicture.asset(
+                    value,
+                    width: 80.w,
+                  )),
       ),
-      child: SvgPicture.asset(AppAsset.oWithShadow),
     );
   }
 }
