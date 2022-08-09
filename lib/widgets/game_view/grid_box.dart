@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:simple_shadow/simple_shadow.dart';
 import 'package:tictactoe_app/constants/app_theme.dart';
 
 class GridBox extends StatelessWidget {
-  GridBox({Key? key, required this.value}) : super(key: key);
-  String value;
+  const GridBox({Key? key, required this.value}) : super(key: key);
+  final String value;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,9 +21,15 @@ class GridBox extends StatelessWidget {
         child: Center(
             child: value.isEmpty
                 ? const SizedBox()
-                : SvgPicture.asset(
-                    value,
-                    width: 60.w,
+                : SimpleShadow(
+                    color: value.contains('x') ? lightBlue : Colors.red,
+                    offset: const Offset(5, 5),
+                    sigma: 7,
+                    opacity: 0.6,
+                    child: SvgPicture.asset(
+                      value,
+                      width: 60.w,
+                    ),
                   )),
       ),
     );

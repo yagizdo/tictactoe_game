@@ -47,6 +47,9 @@ dependencies:
   # Svg
   flutter_svg: ^1.1.3
 
+  # Shadow
+  simple_shadow: ^0.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
