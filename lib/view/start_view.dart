@@ -26,7 +26,7 @@ class StartView extends StatelessWidget {
               children: [
                 Positioned(
                   right: 110.w,
-                  top: 100.h,
+                  top: 95.h,
                   child: SvgPicture.asset(AppAsset.xVector),
                 ),
                 Positioned(
@@ -41,7 +41,7 @@ class StartView extends StatelessWidget {
                       style: Theme.of(context).textTheme.subtitle1,
                     ),
                     SizedBox(
-                      height: 100.h,
+                      height: 150.h,
                     ),
                     Text(
                       'Pick who goes first?',
