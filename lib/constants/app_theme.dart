@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 
+// Colors
+const white = Color(0xFFFFFFFF);
+const blue = Color(0xFF3A7BD5);
+const lightBlue = Color(0xFF00D2FF);
+const black = Color(0xFF323232);
+
 class AppTheme {
   final darkTheme = ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Colors.black, foregroundColor: Colors.white),
+        backgroundColor: black, foregroundColor: Colors.white),
     colorScheme: const ColorScheme.dark(
       brightness: Brightness.dark,
       primary: Colors.black38,
-      secondary: Colors.black,
+      secondary: black,
     ),
     textTheme: const TextTheme(
       subtitle1: TextStyle(
-          color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+        color: white,
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+      ),
+      subtitle2:
+          TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.normal),
     ),
   );
 
@@ -20,15 +31,17 @@ class AppTheme {
     //primarySwatch: Colors.yellow,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        backgroundColor: Color(0xFF00D2FF), foregroundColor: Color(0xFF3A7BD5)),
+      backgroundColor: lightBlue,
+      foregroundColor: blue,
+    ),
     colorScheme: const ColorScheme.light(
       brightness: Brightness.light,
-      primary: Color(0xFF00D2FF),
-      secondary: Color(0xFF3A7BD5),
+      primary: lightBlue,
+      secondary: blue,
     ),
     textTheme: const TextTheme(
-      subtitle1: TextStyle(
-          color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+      subtitle1:
+          TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold),
     ),
   );
 }
