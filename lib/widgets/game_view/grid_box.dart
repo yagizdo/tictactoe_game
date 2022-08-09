@@ -22,7 +22,7 @@ class GridBox extends StatelessWidget {
                 ? const SizedBox()
                 : SvgPicture.asset(
                     value,
-                    width: 80.w,
+                    width: 60.w,
                   )),
       ),
     );
