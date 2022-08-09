@@ -43,13 +43,15 @@ class AppTheme {
       secondary: blue,
     ),
     textTheme: const TextTheme(
-      subtitle1:
+      titleLarge:
           TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold),
-      subtitle2: TextStyle(
+      titleMedium: TextStyle(
         color: white,
         fontSize: 25,
         fontWeight: FontWeight.normal,
       ),
+      labelSmall:
+          TextStyle(color: black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
   );
 }

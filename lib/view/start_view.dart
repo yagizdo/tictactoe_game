@@ -38,14 +38,14 @@ class StartView extends StatelessWidget {
                   children: [
                     Text(
                       'TIC-TAC-TOE',
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                     SizedBox(
                       height: 150.h,
                     ),
                     Text(
                       'Pick who goes first?',
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     SizedBox(height: 30.h),
                     Row(
