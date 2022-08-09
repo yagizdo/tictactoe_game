@@ -13,7 +13,7 @@ class Routes {
         return PageTransition(
             child: const StartView(),
             duration: const Duration(milliseconds: 400),
-            type: PageTransitionType.rotate,
+            type: PageTransitionType.size,
             alignment: Alignment.center,
             childCurrent: const StartView());
       case gameViewRoute:
