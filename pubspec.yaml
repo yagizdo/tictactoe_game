@@ -50,6 +50,9 @@ dependencies:
   # Shadow
   simple_shadow: ^0.3.0
 
+  # Page Transition
+  page_transition: ^2.0.9
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

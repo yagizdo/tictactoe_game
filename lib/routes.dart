@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:tictactoe_app/view/game_view.dart';
 import 'package:tictactoe_app/view/start_view.dart';
 
@@ -9,9 +10,19 @@ class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case startViewRoute:
-        return MaterialPageRoute(builder: (_) => const StartView());
+        return PageTransition(
+            child: const StartView(),
+            duration: const Duration(milliseconds: 400),
+            type: PageTransitionType.rotate,
+            alignment: Alignment.center,
+            childCurrent: const StartView());
       case gameViewRoute:
-        return MaterialPageRoute(builder: (_) => const GameView());
+        return PageTransition(
+            child: const GameView(),
+            duration: const Duration(milliseconds: 600),
+            type: PageTransitionType.fade,
+            alignment: Alignment.center,
+            childCurrent: const GameView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
