@@ -9,18 +9,27 @@ class StartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackground(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Theme.of(context).colorScheme.primary,
-            Theme.of(context).secondaryHeaderColor
-          ],
-        ),
-        child: const Center(
-          child: Text('Tic Tac Toe'),
-        ),
-      ),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              Theme.of(context).colorScheme.primary,
+              Theme.of(context).secondaryHeaderColor
+            ],
+          ),
+          child: SafeArea(
+            child: Align(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'TIC-TAC-TOE',
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                ],
+              ),
+            ),
+          )),
     );
   }
 }

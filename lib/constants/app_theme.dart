@@ -10,6 +10,10 @@ class AppTheme {
       primary: Colors.black38,
       secondary: Colors.black,
     ),
+    textTheme: const TextTheme(
+      subtitle1: TextStyle(
+          color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
+    ),
   );
 
   final lightTheme = ThemeData(
@@ -21,6 +25,10 @@ class AppTheme {
       brightness: Brightness.light,
       primary: Color(0xFF00D2FF),
       secondary: Color(0xFF3A7BD5),
+    ),
+    textTheme: const TextTheme(
+      subtitle1: TextStyle(
+          color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
     ),
   );
 }
