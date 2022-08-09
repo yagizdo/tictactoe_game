@@ -11,8 +11,8 @@ class ButtonContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        width: 123.w,
-        height: 123.h,
+        width: 120.w,
+        height: 120.h,
         decoration: const BoxDecoration(
           color: white,
           borderRadius: BorderRadius.all(
@@ -23,8 +23,8 @@ class ButtonContainer extends StatelessWidget {
           child: SvgPicture.asset(
             image,
             fit: BoxFit.scaleDown,
-            height: 100,
-            width: 100,
+            height: 90,
+            width: 90,
           ),
         ),
       ),

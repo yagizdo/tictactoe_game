@@ -22,8 +22,11 @@ class AppTheme {
         fontSize: 40,
         fontWeight: FontWeight.bold,
       ),
-      subtitle2:
-          TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.normal),
+      subtitle2: TextStyle(
+        color: white,
+        fontSize: 25,
+        fontWeight: FontWeight.normal,
+      ),
     ),
   );
 
@@ -42,6 +45,11 @@ class AppTheme {
     textTheme: const TextTheme(
       subtitle1:
           TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold),
+      subtitle2: TextStyle(
+        color: white,
+        fontSize: 25,
+        fontWeight: FontWeight.normal,
+      ),
     ),
   );
 }
