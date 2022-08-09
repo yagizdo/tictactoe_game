@@ -1,16 +1,55 @@
-# tictactoe_app
+# Flutter - Tic Tac Toe Game
 
-A new Flutter project.
 
-## Getting Started
+## Run Locally
 
-This project is a starting point for a Flutter application.
+Clone the project
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+  git clone https://github.com/yagizdo/tictactoe_game
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Go to the project directory
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+  cd tictactoe_game
+```
+
+Install dependencies
+
+```bash
+  flutter pub get
+```
+
+Run App
+
+```bash
+  flutter run
+```
+
+
+## What will be add :question:
+
+- [ ] Bloc for State Management
+- [ ] Localization Support
+- [ ] Settings Page
+- [ ] Multiplayer Support
+- [ ] Score System
+- [ ] Leaderboard
+
+
+##  Libraries I use in this Project:
+
+- Flutter screenutil : https://pub.dev/packages/flutter_screenutil
+- Adaptive Theme : https://pub.dev/packages/adaptive_theme
+- Flutter dotenv : https://pub.dev/packages/flutter_dotenv
+- Flutter Svg : https://pub.dev/packages/flutter_svg 
+- Simple Shadow : https://pub.dev/packages/simple_shadow
+- Page Transition : https://pub.dev/packages/page_transition
+
+
+
+
+## Contributing
+
+Contributions are always welcome!
