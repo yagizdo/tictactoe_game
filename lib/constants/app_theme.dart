@@ -16,6 +16,15 @@ class AppTheme {
       primary: Colors.black38,
       secondary: black,
     ),
+
+    // Elevated Button
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.black),
+      ),
+    ),
+
+    // Text Theme
     textTheme: const TextTheme(
       subtitle1: TextStyle(
         color: white,
@@ -42,6 +51,15 @@ class AppTheme {
       primary: lightBlue,
       secondary: blue,
     ),
+
+    // Elevated Button
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(lightBlue),
+      ),
+    ),
+
+    // Text Theme
     textTheme: const TextTheme(
       // Tic tac toe title
       titleLarge:
