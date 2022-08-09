@@ -21,6 +21,7 @@ class GridList extends StatelessWidget {
     return SizedBox(
       height: 420,
       child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3, childAspectRatio: 1 / 1),
         itemCount: 9,
