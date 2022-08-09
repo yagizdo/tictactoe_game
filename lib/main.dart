@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_app/routes.dart';
 import 'package:tictactoe_app/view/start_view.dart';
 
 import 'constants/app_theme.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         builder: (theme, darkTheme) => MaterialApp(
           title: 'Tic Tac Toe',
           theme: theme,
+          onGenerateRoute: Routes.generateRoute,
           darkTheme: darkTheme,
           home: const StartView(),
         ),

@@ -9,7 +9,9 @@ class ButtonContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, '/gameView');
+      },
       child: Container(
         width: 120.w,
         height: 120.h,
