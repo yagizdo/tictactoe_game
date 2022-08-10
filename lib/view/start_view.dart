@@ -48,13 +48,6 @@ class StartView extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
                     SizedBox(height: 30.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ButtonContainer(image: AppAsset.xWithUnShadow),
-                        ButtonContainer(image: AppAsset.oWithUnShadow),
-                      ],
-                    )
                   ],
                 ),
               ],
