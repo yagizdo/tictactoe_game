@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tictactoe_app/constants/app_assets.dart';
 
+import '../widgets/game_view/game_button.dart';
 import '../widgets/gradient_background.dart';
-import '../widgets/start_view/button_container.dart';
 
 class StartView extends StatelessWidget {
   const StartView({Key? key}) : super(key: key);
@@ -33,22 +33,31 @@ class StartView extends StatelessWidget {
                   left: 210.w,
                   child: SvgPicture.asset(AppAsset.oVector),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'TIC-TAC-TOE',
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    SizedBox(
-                      height: 150.h,
-                    ),
-                    Text(
-                      'Pick who goes first?',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    SizedBox(height: 30.h),
-                  ],
+                Align(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'TIC-TAC-TOE',
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      SizedBox(
+                        height: 150.h,
+                      ),
+                      Text(
+                        'Welcome Mr. Stark',
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      SizedBox(height: 30.h),
+                      GameButton(
+                        function: () {},
+                        borderRadius: 20.sp,
+                        width: 200.w,
+                        backgroundColor: Colors.yellow,
+                        child: const Text('Start Game'),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
