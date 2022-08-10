@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tictactoe_app/constants/app_assets.dart';
 
+import '../routes.dart';
 import '../widgets/game_view/game_button.dart';
 import '../widgets/gradient_background.dart';
 
@@ -50,7 +51,10 @@ class StartView extends StatelessWidget {
                       ),
                       SizedBox(height: 30.h),
                       GameButton(
-                        function: () {},
+                        function: () {
+                          Navigator.pushReplacementNamed(
+                              context, Routes.gameViewRoute);
+                        },
                         borderRadius: 20.sp,
                         width: 200.w,
                         backgroundColor: Colors.yellow,
