@@ -25,15 +25,33 @@ class StartView extends StatelessWidget {
           child: Align(
             child: Stack(
               children: [
+                // Settings Button
+                Positioned(
+                  left: 320.w,
+                  top: 50.h,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.settings,
+                      size: 25.w,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+
+                // X Vector
                 Positioned(
                   right: 110.w,
                   top: 95.h,
                   child: SvgPicture.asset(AppAsset.xVector),
                 ),
+
+                // O Vector
                 Positioned(
                   left: 210.w,
                   child: SvgPicture.asset(AppAsset.oVector),
                 ),
+
+                // Game title and button section
                 Align(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
