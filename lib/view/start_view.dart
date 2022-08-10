@@ -1,5 +1,7 @@
+import 'package:cupertino_list_tile/cupertino_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tictactoe_app/constants/app_assets.dart';
 
@@ -14,76 +16,131 @@ class StartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GradientBackground(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Theme.of(context).colorScheme.primary,
-              Theme.of(context).secondaryHeaderColor
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Theme.of(context).colorScheme.primary,
+            Theme.of(context).secondaryHeaderColor
+          ],
+        ),
+        child: Align(
+          child: Stack(
+            children: [
+              // X Vector
+              Positioned(
+                right: 110.w,
+                top: 95.h,
+                child: SvgPicture.asset(AppAsset.xVector),
+              ),
+
+              // O Vector
+              Positioned(
+                left: 210.w,
+                child: SvgPicture.asset(AppAsset.oVector),
+              ),
+
+              // Settings Button
+              Positioned(
+                left: 320.w,
+                top: 50.h,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.settings,
+                    size: 25.w,
+                  ),
+                  onPressed: () {
+                    showCustomDialog(context);
+                  },
+                ),
+              ),
+
+              // Game title and button section
+              Align(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'TIC-TAC-TOE',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    SizedBox(
+                      height: 150.h,
+                    ),
+                    Text(
+                      'Welcome Mr. Stark',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    SizedBox(height: 30.h),
+                    GameButton(
+                      function: () {
+                        Navigator.pushReplacementNamed(
+                            context, Routes.gameViewRoute);
+                      },
+                      borderRadius: 20.sp,
+                      width: 200.w,
+                      backgroundColor: Colors.yellow,
+                      child: const Text('Start Game'),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          child: Align(
-            child: Stack(
-              children: [
-                // Settings Button
-                Positioned(
-                  left: 320.w,
-                  top: 50.h,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.settings,
-                      size: 25.w,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-
-                // X Vector
-                Positioned(
-                  right: 110.w,
-                  top: 95.h,
-                  child: SvgPicture.asset(AppAsset.xVector),
-                ),
-
-                // O Vector
-                Positioned(
-                  left: 210.w,
-                  child: SvgPicture.asset(AppAsset.oVector),
-                ),
-
-                // Game title and button section
-                Align(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'TIC-TAC-TOE',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      SizedBox(
-                        height: 150.h,
-                      ),
-                      Text(
-                        'Welcome Mr. Stark',
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      SizedBox(height: 30.h),
-                      GameButton(
-                        function: () {
-                          Navigator.pushReplacementNamed(
-                              context, Routes.gameViewRoute);
-                        },
-                        borderRadius: 20.sp,
-                        width: 200.w,
-                        backgroundColor: Colors.yellow,
-                        child: const Text('Start Game'),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )),
+        ),
+      ),
     );
+  }
+
+  showCustomDialog(BuildContext context) {
+    SmartDialog.show(
+        backDismiss: false,
+        builder: (_) {
+          return Container(
+              height: 400.h,
+              width: 300.w,
+              decoration: BoxDecoration(
+                color: Theme.of(context).backgroundColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              alignment: Alignment.center,
+              child: Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Positioned(
+                    child: IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () {
+                        SmartDialog.dismiss();
+                      },
+                    ),
+                  ),
+                  Align(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 8.h,
+                        ),
+                        Text(
+                          'Settings',
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        SizedBox(
+                          height: 300.h,
+                          child: ListView.builder(
+                            itemCount: 4,
+                            itemBuilder: (context, index) {
+                              return const CupertinoListTile(
+                                title: Text('te'),
+                              );
+                            },
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ));
+        });
   }
 }

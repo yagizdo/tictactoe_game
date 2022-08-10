@@ -56,6 +56,9 @@ dependencies:
   # Flutter Smart Dialog
   flutter_smart_dialog: ^4.5.4+1
 
+  # Cupertino List Tile
+  cupertino_list_tile: ^0.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
