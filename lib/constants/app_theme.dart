@@ -20,22 +20,30 @@ class AppTheme {
     // Elevated Button
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(Colors.black),
+        backgroundColor: MaterialStateProperty.all(black),
       ),
     ),
 
     // Text Theme
     textTheme: const TextTheme(
-      subtitle1: TextStyle(
-        color: white,
-        fontSize: 40,
-        fontWeight: FontWeight.bold,
-      ),
-      subtitle2: TextStyle(
+      // Tic tac toe title
+      titleLarge:
+          TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold),
+
+      // Pick subtitle
+      titleMedium: TextStyle(
         color: white,
         fontSize: 25,
         fontWeight: FontWeight.normal,
       ),
+
+      // Game view timer text
+      labelSmall:
+          TextStyle(color: black, fontSize: 25, fontWeight: FontWeight.w600),
+
+      // Game view user turn text
+      labelMedium:
+          TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
     ),
   );
 

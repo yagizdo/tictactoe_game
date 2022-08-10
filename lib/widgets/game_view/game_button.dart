@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_app/constants/app_theme.dart';
 
 class GameButton extends StatelessWidget {
   const GameButton(
@@ -26,9 +27,7 @@ class GameButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: function,
         style: ButtonStyle(
-          backgroundColor: backgroundColor != null
-              ? MaterialStateProperty.all(backgroundColor)
-              : Theme.of(context).elevatedButtonTheme.style!.backgroundColor!,
+          backgroundColor: MaterialStateProperty.all(backgroundColor ?? white),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius ?? 2),
