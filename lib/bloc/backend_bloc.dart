@@ -41,5 +41,12 @@ class BackendBloc extends Bloc<BackendEvent, BackendState> {
       currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
       emit(GameState(gameList, currentPlayer));
     });
+
+    on<ResetGameEvent>((event, emit) {
+      gameList.fillRange(0, 9, '');
+      currentPlayer = 'X';
+      isDone = false;
+      emit(GameState(gameList, currentPlayer));
+    });
   }
 }

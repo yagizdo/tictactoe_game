@@ -58,7 +58,9 @@ class GameView extends StatelessWidget {
                 height30,
                 // Reset Game Button
                 GameButton(
-                  function: () {},
+                  function: () {
+                    BlocProvider.of<BackendBloc>(context).add(ResetGameEvent());
+                  },
                   width: 250.w,
                   height: 40.h,
                   borderRadius: 10,
@@ -71,6 +73,7 @@ class GameView extends StatelessWidget {
                 // Return main menu Button
                 GameButton(
                   function: () {
+                    BlocProvider.of<BackendBloc>(context).add(ResetGameEvent());
                     Navigator.pushReplacementNamed(
                         context, Routes.startViewRoute);
                   },

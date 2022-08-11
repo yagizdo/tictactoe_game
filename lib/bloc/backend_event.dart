@@ -8,3 +8,5 @@ class ClickEvent extends BackendEvent {
 
   ClickEvent(this.index);
 }
+
+class ResetGameEvent extends BackendEvent {}
