@@ -58,6 +58,9 @@ dependencies:
 
   # Cupertino List Tile
   cupertino_list_tile: ^0.2.1
+  bloc: ^8.1.0
+  flutter_bloc: ^8.0.1
+  meta: ^1.7.0
 
 dev_dependencies:
   flutter_test:
