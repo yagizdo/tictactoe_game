@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tictactoe_app/constants/app_constants.dart';
 import 'package:tictactoe_app/routes.dart';
@@ -6,6 +7,7 @@ import 'package:tictactoe_app/widgets/game_view/game_button.dart';
 import 'package:tictactoe_app/widgets/game_view/game_timer.dart';
 import 'package:tictactoe_app/widgets/game_view/grid_list.dart';
 
+import '../bloc/backend_bloc.dart';
 import '../widgets/gradient_background.dart';
 
 class GameView extends StatelessWidget {
@@ -30,10 +32,27 @@ class GameView extends StatelessWidget {
                 height50,
                 const GameTimer(),
                 height30,
-                Text(
-                  'Player X Turn',
-                  style: Theme.of(context).textTheme.labelMedium,
-                ),
+
+                BlocBuilder<BackendBloc, BackendState>(
+                    builder: (context, state) {
+                  if (state is WinState) {
+                    return Text(
+                      'Player ${state.winner} win!',
+                      style: Theme.of(context).textTheme.labelMedium,
+                    );
+                  }
+                  if (state is GameState) {
+                    return Text(
+                      'Player ${state.currentPlayer} Turn',
+                      style: Theme.of(context).textTheme.labelMedium,
+                    );
+                  }
+                  return Text(
+                    'Player X Turn',
+                    style: Theme.of(context).textTheme.labelMedium,
+                  );
+                }),
+
                 height40,
                 const GridList(),
                 height30,

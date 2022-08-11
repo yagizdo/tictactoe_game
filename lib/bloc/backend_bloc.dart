@@ -7,6 +7,7 @@ part 'backend_state.dart';
 class BackendBloc extends Bloc<BackendEvent, BackendState> {
   List<String> gameList = List.filled(9, '', growable: false);
   String currentPlayer = 'X';
+  bool isDone = false;
   List<List<int>> winningList = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,7 +23,6 @@ class BackendBloc extends Bloc<BackendEvent, BackendState> {
 
     on<ClickEvent>((event, emit) {
       gameList[event.index] = currentPlayer;
-      emit(GameState(gameList));
 
       for (var winningPos in winningList) {
         String playerPosition0 = gameList[winningPos[0]];
@@ -32,12 +32,14 @@ class BackendBloc extends Bloc<BackendEvent, BackendState> {
         if (playerPosition0.isNotEmpty) {
           if (playerPosition0 == playerPosition1 &&
               playerPosition0 == playerPosition2) {
+            isDone = true;
             emit(WinState(currentPlayer));
             return;
           }
         }
       }
       currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
+      emit(GameState(gameList, currentPlayer));
     });
   }
 }

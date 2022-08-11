@@ -7,8 +7,9 @@ class BackendInitial extends BackendState {}
 
 class GameState extends BackendState {
   final List<String> gameList;
+  final String currentPlayer;
 
-  GameState(this.gameList);
+  GameState(this.gameList, this.currentPlayer);
 }
 
 class WinState extends BackendState {
