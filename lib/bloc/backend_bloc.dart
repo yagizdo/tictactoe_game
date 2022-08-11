@@ -33,7 +33,6 @@ class BackendBloc extends Bloc<BackendEvent, BackendState> {
           if (playerPosition0 == playerPosition1 &&
               playerPosition0 == playerPosition2) {
             emit(WinState(currentPlayer));
-            print('Kaznadi : $currentPlayer');
             return;
           }
         }
