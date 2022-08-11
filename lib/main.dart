@@ -1,10 +1,12 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:tictactoe_app/routes.dart';
 import 'package:tictactoe_app/view/start_view.dart';
 
+import 'bloc/backend_bloc.dart';
 import 'constants/app_theme.dart';
 
 void main() async {
@@ -15,8 +17,11 @@ void main() async {
 
   // Get themeMode
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  runApp(MyApp(
-    themeMode: savedThemeMode,
+  runApp(BlocProvider(
+    create: (context) => BackendBloc(),
+    child: MyApp(
+      themeMode: savedThemeMode,
+    ),
   ));
 }
 
