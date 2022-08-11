@@ -33,7 +33,7 @@ class BackendBloc extends Bloc<BackendEvent, BackendState> {
           if (playerPosition0 == playerPosition1 &&
               playerPosition0 == playerPosition2) {
             isDone = true;
-            emit(WinState(currentPlayer));
+            emit(WinState(currentPlayer, gameList));
             return;
           }
         }

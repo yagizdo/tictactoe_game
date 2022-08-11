@@ -14,6 +14,7 @@ class GameState extends BackendState {
 
 class WinState extends BackendState {
   final String winner;
+  final List<String> gameList;
 
-  WinState(this.winner);
+  WinState(this.winner, this.gameList);
 }
