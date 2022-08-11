@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SettingItem {
-  String title;
-  String desc;
-  VoidCallback function;
+  Widget title;
+  Widget subtitle;
+  Widget trailing;
 
-  SettingItem(this.title, this.desc, this.function);
+  SettingItem(
+      {required this.title, required this.subtitle, required this.trailing});
 }
