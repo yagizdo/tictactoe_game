@@ -44,6 +44,22 @@ class AppTheme {
       // Game view user turn text
       labelMedium:
           TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
+
+      // Settings - dark mode title
+      labelLarge:
+          TextStyle(color: white, fontSize: 17, fontWeight: FontWeight.bold),
+
+      // Settings = dark mode subtitle
+      titleSmall:
+          TextStyle(color: white, fontSize: 13, fontWeight: FontWeight.normal),
+
+      // Game Button = Return Main Menu Text
+      displaySmall:
+          TextStyle(color: white, fontSize: 18, fontWeight: FontWeight.normal),
+
+      // Game Button = Reset Game Text
+      displayMedium:
+          TextStyle(color: black, fontSize: 18, fontWeight: FontWeight.normal),
     ),
   );
 
@@ -87,6 +103,22 @@ class AppTheme {
       // Game view user turn text
       labelMedium:
           TextStyle(color: white, fontSize: 25, fontWeight: FontWeight.bold),
+
+      // Settings - dark mode title
+      labelLarge:
+          TextStyle(color: white, fontSize: 17, fontWeight: FontWeight.bold),
+
+      // Settings = dark mode subtitle
+      titleSmall:
+          TextStyle(color: white, fontSize: 13, fontWeight: FontWeight.normal),
+
+      // Game Button Text
+      displaySmall:
+          TextStyle(color: white, fontSize: 18, fontWeight: FontWeight.normal),
+
+      // Game Button = Reset Game Text
+      displayMedium:
+          TextStyle(color: black, fontSize: 18, fontWeight: FontWeight.normal),
     ),
   );
 }

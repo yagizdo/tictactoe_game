@@ -1,9 +1,10 @@
-import 'package:cupertino_list_tile/cupertino_list_tile.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tictactoe_app/constants/app_assets.dart';
+import 'package:tictactoe_app/constants/app_theme.dart';
 
 import '../routes.dart';
 import '../widgets/game_view/game_button.dart';
@@ -48,6 +49,7 @@ class StartView extends StatelessWidget {
                   icon: Icon(
                     Icons.settings,
                     size: 25.w,
+                    color: white,
                   ),
                   onPressed: () {
                     showCustomDialog(context);
@@ -93,6 +95,7 @@ class StartView extends StatelessWidget {
   }
 
   showCustomDialog(BuildContext context) {
+    final manager = AdaptiveTheme.of(context);
     SmartDialog.show(
         backDismiss: false,
         builder: (_) {
@@ -128,10 +131,31 @@ class StartView extends StatelessWidget {
                         SizedBox(
                           height: 300.h,
                           child: ListView.builder(
-                            itemCount: 4,
+                            itemCount: 1,
                             itemBuilder: (context, index) {
-                              return const CupertinoListTile(
-                                title: Text('te'),
+                              return ListTile(
+                                title: Text(
+                                  'Dark Mode',
+                                  style: Theme.of(context).textTheme.labelLarge,
+                                ),
+                                subtitle: Text(
+                                  'Change theme mode',
+                                  style: Theme.of(context).textTheme.titleSmall,
+                                ),
+                                trailing: IconButton(
+                                    onPressed: () {
+                                      if (manager.mode.isLight) {
+                                        manager.setDark();
+                                      } else {
+                                        manager.setLight();
+                                      }
+                                    },
+                                    icon: Icon(
+                                      manager.mode.isLight
+                                          ? Icons.dark_mode_rounded
+                                          : Icons.sunny,
+                                      color: white,
+                                    )),
                               );
                             },
                           ),

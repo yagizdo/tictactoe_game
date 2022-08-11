@@ -56,14 +56,6 @@ dependencies:
   # Flutter Smart Dialog
   flutter_smart_dialog: ^4.5.4+1
 
-  # Cupertino List Tile
-  cupertino_list_tile: ^0.2.1
-
-  # Bloc
-  bloc: ^8.1.0
-  flutter_bloc: ^8.0.1
-  meta: ^1.7.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
