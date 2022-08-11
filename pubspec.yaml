@@ -53,6 +53,9 @@ dependencies:
   # Page Transition
   page_transition: ^2.0.9
 
+  # Flutter Smart Dialog
+  flutter_smart_dialog: ^4.5.4+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

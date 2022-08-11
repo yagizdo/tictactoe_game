@@ -51,7 +51,8 @@ class GameView extends StatelessWidget {
                       width: 250.w,
                       height: 40.h,
                       borderRadius: 10,
-                      child: const Text('Reset Game'),
+                      child: Text('Reset Game',
+                          style: Theme.of(context).textTheme.displayMedium),
                     ),
 
                     SizedBox(
@@ -61,13 +62,17 @@ class GameView extends StatelessWidget {
                     // Return main menu Button
                     GameButton(
                       function: () {
-                        Navigator.pushReplacementNamed(context, Routes.startViewRoute);
+                        Navigator.pushReplacementNamed(
+                            context, Routes.startViewRoute);
                       },
                       width: 250.w,
                       height: 40.h,
                       borderRadius: 10,
                       backgroundColor: Colors.red,
-                      child: const Text('Return main menu'),
+                      child: Text(
+                        'Return main menu',
+                        style: Theme.of(context).textTheme.displaySmall,
+                      ),
                     ),
                   ],
                 ),
