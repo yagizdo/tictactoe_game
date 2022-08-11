@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:tictactoe_app/constants/app_constants.dart';
 import 'package:tictactoe_app/routes.dart';
 import 'package:tictactoe_app/widgets/game_view/game_button.dart';
@@ -27,66 +29,88 @@ class GameView extends StatelessWidget {
         ),
         child: Align(
           child: SafeArea(
-            child: Column(
-              children: [
-                height50,
-                const GameTimer(),
-                height30,
+            child: BlocListener<BackendBloc, BackendState>(
+              listener: (context, state) {
+                if (state is WinState) {
+                  SmartDialog.show(
+                      backDismiss: false,
+                      alignment: Alignment.bottomCenter,
+                      builder: (_) {
+                        return Container(
+                          alignment: Alignment.center,
+                          color: CupertinoColors.activeGreen,
+                          height: 100.h,
+                          child: Text(
+                            'Player ${state.winner} win!',
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                        );
+                      });
+                }
+              },
+              child: Column(
+                children: [
+                  height50,
+                  const GameTimer(),
+                  height30,
 
-                BlocBuilder<BackendBloc, BackendState>(
-                    builder: (context, state) {
-                  if (state is WinState) {
+                  BlocBuilder<BackendBloc, BackendState>(
+                      builder: (context, state) {
+                    if (state is WinState) {
+                      return Text(
+                        'Player ${state.winner} win!',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      );
+                    }
+                    if (state is GameState) {
+                      return Text(
+                        'Player ${state.currentPlayer} Turn',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      );
+                    }
                     return Text(
-                      'Player ${state.winner} win!',
+                      'Player X Turn',
                       style: Theme.of(context).textTheme.labelMedium,
                     );
-                  }
-                  if (state is GameState) {
-                    return Text(
-                      'Player ${state.currentPlayer} Turn',
-                      style: Theme.of(context).textTheme.labelMedium,
-                    );
-                  }
-                  return Text(
-                    'Player X Turn',
-                    style: Theme.of(context).textTheme.labelMedium,
-                  );
-                }),
+                  }),
 
-                height40,
-                const GridList(),
-                height30,
-                // Reset Game Button
-                GameButton(
-                  function: () {
-                    BlocProvider.of<BackendBloc>(context).add(ResetGameEvent());
-                  },
-                  width: 250.w,
-                  height: 40.h,
-                  borderRadius: 10,
-                  child: Text('Reset Game',
-                      style: Theme.of(context).textTheme.displayMedium),
-                ),
-
-                height20,
-
-                // Return main menu Button
-                GameButton(
-                  function: () {
-                    BlocProvider.of<BackendBloc>(context).add(ResetGameEvent());
-                    Navigator.pushReplacementNamed(
-                        context, Routes.startViewRoute);
-                  },
-                  width: 250.w,
-                  height: 40.h,
-                  borderRadius: 10,
-                  backgroundColor: Colors.red,
-                  child: Text(
-                    'Return main menu',
-                    style: Theme.of(context).textTheme.displaySmall,
+                  height40,
+                  const GridList(),
+                  height30,
+                  // Reset Game Button
+                  GameButton(
+                    function: () {
+                      BlocProvider.of<BackendBloc>(context)
+                          .add(ResetGameEvent());
+                    },
+                    width: 250.w,
+                    height: 40.h,
+                    borderRadius: 10,
+                    child: Text('Reset Game',
+                        style: Theme.of(context).textTheme.displayMedium),
                   ),
-                ),
-              ],
+
+                  height20,
+
+                  // Return main menu Button
+                  GameButton(
+                    function: () {
+                      BlocProvider.of<BackendBloc>(context)
+                          .add(ResetGameEvent());
+                      Navigator.pushReplacementNamed(
+                          context, Routes.startViewRoute);
+                    },
+                    width: 250.w,
+                    height: 40.h,
+                    borderRadius: 10,
+                    backgroundColor: Colors.red,
+                    child: Text(
+                      'Return main menu',
+                      style: Theme.of(context).textTheme.displaySmall,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
