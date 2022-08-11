@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tictactoe_app/constants/app_constants.dart';
 
 import '../../routes.dart';
 import '../game_view/game_button.dart';
@@ -18,14 +19,12 @@ class GameTitleAndButtonSection extends StatelessWidget {
             'TIC-TAC-TOE',
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          SizedBox(
-            height: 150.h,
-          ),
+          height150,
           Text(
             'Welcome Mr. Stark',
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          SizedBox(height: 30.h),
+          height30,
           GameButton(
             function: () {
               Navigator.pushReplacementNamed(context, Routes.gameViewRoute);
