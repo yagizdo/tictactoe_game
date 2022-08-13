@@ -30,9 +30,9 @@ Run App
 
 ## What will be add :question:
 
-- [ ] Bloc for State Management
+- [x] Bloc for State Management
 - [ ] Localization Support
-- [ ] Settings Page
+- [x] Settings Page
 - [ ] Multiplayer Support
 - [ ] Score System
 - [ ] Leaderboard

@@ -89,7 +89,7 @@ class AppTheme {
       titleLarge:
           TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold),
 
-      // Pick subtitle
+      // Pick subtitle - Settings title and Winner dialog text
       titleMedium: TextStyle(
         color: white,
         fontSize: 25,
