@@ -77,20 +77,6 @@ class GameView extends StatelessWidget {
                   height40,
                   const GridList(),
                   height30,
-                  // Reset Game Button
-                  GameButton(
-                    function: () {
-                      BlocProvider.of<BackendBloc>(context)
-                          .add(ResetGameEvent());
-                    },
-                    width: 250.w,
-                    height: 40.h,
-                    borderRadius: 10,
-                    child: Text('Reset Game',
-                        style: Theme.of(context).textTheme.displayMedium),
-                  ),
-
-                  height20,
 
                   // Return main menu Button
                   GameButton(

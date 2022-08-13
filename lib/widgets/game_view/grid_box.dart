@@ -8,10 +8,16 @@ import 'package:tictactoe_app/constants/app_theme.dart';
 
 import '../../bloc/backend_bloc.dart';
 
-class GridBox extends StatelessWidget {
+class GridBox extends StatefulWidget {
   const GridBox({Key? key, required this.index}) : super(key: key);
   final int index;
 
+  @override
+  State<GridBox> createState() => _GridBoxState();
+}
+
+class _GridBoxState extends State<GridBox> {
+  List<int> indexList = [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,13 +29,21 @@ class GridBox extends StatelessWidget {
               if (state is WinState) {
                 return;
               }
-              BlocProvider.of<BackendBloc>(context).add(ClickEvent(index));
+
+              if (indexList.contains(widget.index)) {
+                return;
+              }
+              setState(() {
+                indexList.add(widget.index);
+              });
+              BlocProvider.of<BackendBloc>(context)
+                  .add(ClickEvent(widget.index));
             },
             child: BlocBuilder<BackendBloc, BackendState>(
               builder: (context, state) {
                 // Game State
                 if (state is GameState) {
-                  var value = state.gameList[index];
+                  var value = state.gameList[widget.index];
                   return Container(
                     decoration: const BoxDecoration(
                       color: white,
@@ -56,7 +70,7 @@ class GridBox extends StatelessWidget {
 
                 // Win State
                 if (state is WinState) {
-                  var value = state.gameList[index];
+                  var value = state.gameList[widget.index];
                   return Container(
                     decoration: const BoxDecoration(
                       color: white,
